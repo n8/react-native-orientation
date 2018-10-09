@@ -63,6 +63,15 @@ module.exports = {
       });
   },
 
+  removeAllListeners(){
+    for(var index in listeners) {
+      if(listeners[index]){
+        listeners[index].remove(); 
+        listeners[index] = null; 
+      }
+    }
+  }, 
+  
   removeOrientationListener(cb) {
     var key = getKey(cb);
 
